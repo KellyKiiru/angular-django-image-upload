@@ -13,6 +13,7 @@ export class SettingsService {
       .subscribe(data => {
         console.log(data);
         this.snippet = data;
+        console.log("snippet is: " + this.snippet)
       });
   }
 
