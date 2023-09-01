@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload-image.component.css']
 })
 export class UploadImageComponent{
+  title = "Upload";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -25,7 +26,7 @@ export class UploadImageComponent{
     imageFormData.append('image',this.uploadedImage, this.uploadedImage.name)
 
     this.httpClient.post('http://127.0.0.1:8000/upload/image/', imageFormData, {observe:'response'}).subscribe((response)=>{
-      if (response.status === 200){
+      if (response.status === 201){
         this.postResponse = response;
         this.successResponse = this.postResponse.body.message;
       } else {

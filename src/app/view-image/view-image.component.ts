@@ -10,6 +10,7 @@ import { SettingsService } from '../settings.service';
   styleUrls: ['./view-image.component.css']
 })
 export class ViewImageComponent implements OnInit{
+  title = "View image";
 
   // constructor(private httpClient:HttpClient) {};
 
@@ -31,24 +32,21 @@ export class ViewImageComponent implements OnInit{
   }
 
   uploadedImage!: File;
-  dbImage:any;
   postResponse:any;
   successResponse!: string;
-  image!: string;
+  image: any;
 
   viewImage() {
-    return this.httpClient.get(`http://127.0.0.1:8000/get/image/info/${this.image}/`,{observe:'response'}).subscribe(res => {
+    return this.httpClient.get(`http://127.0.0.1:8000/get/image/info/${this.image}/`,{observe:'response'}).subscribe((res) => {
           console.log(res);
           this.postResponse = res;
-          this.dbImage = 'data:image/jpeg;base64,'+ this.postResponse.image;
+          this.dbImage = `data:image/jpeg;base64,${this.postResponse.image}`;
+
           console.log("fdbniisanvjk");
           console.log(this.dbImage);
         }
       );
   };
   
-  // ngOnInit(){
-  //   this.viewImage();
-  // }
-
+  dbImage:any;
 }
