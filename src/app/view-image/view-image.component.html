@@ -1,0 +1,20 @@
+<div class="text-center p-4">
+    <form action="">
+        <div class="form-group">
+            <input type="text" id="image" placeholder="Search Image" [(ngModel)]="image" name="image" />
+            <input type="button" (click)="viewImage()" value="View Image" class="btn1">
+        </div>
+
+        <br>
+        <div *ngIf=dbImage>
+            <img [src]="dbImage" alt="{{postResponse.url}}">
+            <!-- <img src="{{dbImage}}" alt="{{postResponse.url}}"> -->
+        </div>
+    </form>
+</div>
+
+
+
+<!-- <input type="text" name="{{ name }}" id=""> -->
+
+<img id="myimage" [src]='thumbnail' />
