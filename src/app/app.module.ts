@@ -9,6 +9,8 @@ import { FormsModule } from '@angular/forms';
 
 import { ViewImageComponent } from './view-image/view-image.component';
 import { UploadImageComponent } from './upload-image/upload-image.component';
+import { ConfigService } from './config.service';
+import { SettingsService } from './settings.service';
 
 @NgModule({
   declarations: [
