@@ -11,7 +11,7 @@ import { ViewImageComponent } from './view-image/view-image.component';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { ConfigService } from './config.service';
 import { SettingsService } from './settings.service';
-import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 
 @NgModule({
