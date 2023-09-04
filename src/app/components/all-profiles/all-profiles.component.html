@@ -1,1 +1,16 @@
-<p>all-profiles works!</p>
+<h1 class="text-center">all-profiles</h1>
+
+<hr>
+
+<div *ngIf="profiles.length>0">
+    <div *ngFor="let profile of profiles" >
+
+        <img [src]="profile.imagePath" alt="" srcset="">
+        <div>
+            <span>
+                {{profile.name}}
+            </span>
+        </div>
+
+    </div>
+</div>
