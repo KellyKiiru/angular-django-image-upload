@@ -26,5 +26,7 @@ export class ProfilesService {
     })
   }
 
-  
+  getProfilesStream(){
+    return this.profiles$.asObservable();
+  }
 }
