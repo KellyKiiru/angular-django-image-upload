@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Profile } from '../models/profiles';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+
+import { Profile } from '../models/profiles';
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,7 @@ export class ProfilesService {
       })
     ).subscribe((profiles)=>{
         this.profiles = profiles;
+        this.profiles$.next(this.profiles)
     })
   }
 
