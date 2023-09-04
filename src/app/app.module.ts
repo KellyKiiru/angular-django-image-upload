@@ -13,6 +13,7 @@ import { ConfigService } from './config.service';
 import { SettingsService } from './settings.service';
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
+import { ProfilesService } from './services/profiles.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { AllProfilesComponent } from './components/all-profiles/all-profiles.com
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [provideClientHydration(),ConfigService,SettingsService],
+  providers: [provideClientHydration(),ConfigService,SettingsService,ProfilesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
