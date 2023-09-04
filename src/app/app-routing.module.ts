@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { ViewImageComponent } from './view-image/view-image.component';
 import { UploadImageComponent } from './upload-image/upload-image.component';
+
 import { CreateProfileComponent } from './components/create-profile/create-profile.component';
 import { AllProfilesComponent } from './components/all-profiles/all-profiles.component';
 
