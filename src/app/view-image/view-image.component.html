@@ -7,9 +7,10 @@
 
         <br>
         <div *ngIf=dbImage>
-            <img [src]="dbImage" alt="{{postResponse.url}}" style="max-width:300px;max-height:300px">
+            <!-- <img ng-src="{{dbImage}}" alt="{{postResponse.url}}" style="max-width:300px;max-height:300px"> -->
+            <img src="data:image;jpg;base64,{{dbImage}}" alt="{{postResponse.url}}" style="max-width:600px;max-height:300px; border: 1px solid black;">
         </div>
     </form>
 </div>
 
-<img id="myimage" [src]='thumbnail' />
+<!-- <img id="myimage" [src]='thumbnail' /> -->
