@@ -12,7 +12,7 @@ export class CreateProfileComponent implements OnInit {
 
   form!: FormGroup;
   profile!:Profile;
-  imageData!:string;
+  imageData!:any;
 
   constructor() { }
 
@@ -23,11 +23,25 @@ export class CreateProfileComponent implements OnInit {
     })
   }
 
-  onSubmit(){
-    console.log(this.profile)
-  }
-
   onFileSelect(event:Event){
-    console.log("file selected")
+    console.log('file selected')
+    const file = (event?.target as HTMLInputElement).files?.[0];
+    this.form.patchValue({image:file});
+    const allowedMimeTypes = ['image/png', 'image/jpg', 'image/jpeg'];
+
+    if(file && allowedMimeTypes.includes(file.type)){
+      const reader = new FileReader();
+      console.log("Image is ready")
+      reader.onload = ()=>{
+        this.imageData = reader.result as string
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  onSubmit(){
+    this.form.reset();
+    this.imageData = null;
+
   }
 }
