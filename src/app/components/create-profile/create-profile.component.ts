@@ -22,4 +22,12 @@ export class CreateProfileComponent implements OnInit {
       image : new FormControl(null),
     })
   }
+
+  onSubmit(){
+    console.log(this.profile)
+  }
+
+  onFileSelect(event:Event){
+    console.log("file selected")
+  }
 }
