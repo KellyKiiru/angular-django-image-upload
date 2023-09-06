@@ -13,6 +13,15 @@ export class CloudinaryUploadComponent implements OnInit{
   ngOnInit(): void {
 
     // create a cloudinary instance, setting some cloud and URL configuration
+    const cld = new Cloudinary({
+      cloud:{
+        cloudName:'demmo'
+      }
+    });
 
+    // cld.image returns a CloudinaryImage with the configuration set
+    this.img = cld.image('sample')
+
+    // the url of the image is https://res.cloudinary.com/demo/image/upload/sample
   }
 }
