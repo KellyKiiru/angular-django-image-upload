@@ -1,5 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { Cloudinary, CloudinaryImage } from '@cloudinary/url-gen';
+import { Transformation } from '@cloudinary/url-gen';
+
+// import required actions
+import { thumbnail, scale } from '@cloudinary/url-gen/actions/resize';
+import { byRadius } from '@cloudinary/url-gen/actions/roundCorners';
+import { sepia } from '@cloudinary/url-gen/actions/effect';
+import { source } from '@cloudinary/url-gen/actions/overlay';
+import { opacity, brightness } from '@cloudinary/url-gen/actions/adjust';
+import { byAngle } from '@cloudinary/url-gen/actions/rotate';
+
+// import required qualifiers
+import { image } from '@cloudinary/url-gen/qualifiers/source';
+import { Position } from '@cloudinary/url-gen/qualifiers';
+import { compass } from '@cloudinary/url-gen/qualifiers/gravity';
+import { focusOn } from '@cloudinary/url-gen/qualifiers/gravity';
+import { FocusOn } from '@cloudinary/url-gen/qualifiers/focusOn';
+
+
 
 @Component({
   selector: 'app-cloudinary-upload',
