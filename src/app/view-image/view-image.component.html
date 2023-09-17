@@ -1,16 +1,17 @@
 <div class="text-center p-4">
     <form action="">
         <div class="form-group">
-            <input type="text" id="image" placeholder="Search Image" [(ngModel)]="image" name="image" />
+            <input style="width: fit-content;" type="text" id="image" placeholder="Search Image" [(ngModel)]="image" name="image" />
             <input type="button" (click)="viewImage()" value="View Image" class="btn1">
         </div>
 
         <br>
         <div *ngIf=dbImage>
             <!-- <img ng-src="{{dbImage}}" alt="{{postResponse.url}}" style="max-width:300px;max-height:300px"> -->
-            <img src="data:image;jpg;base64,{{dbImage}}" alt="{{postResponse.url}}" style="max-width:600px;max-height:300px; border: 1px solid black;">
+            <img [src]="dbImage" alt="{{postResponse.url}}" style="max-width:600px;max-height:300px; border: 1px solid black;">
         </div>
     </form>
 </div>
 
 <!-- <img id="myimage" [src]='thumbnail' /> -->
+
