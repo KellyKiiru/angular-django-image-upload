@@ -13,7 +13,7 @@ export class ProfilesService {
 
   private profiles$ = new Subject<Profile[]>()
 
-  readonly url = 'http://127.0.0.1:8000/api/profiles';
+  readonly url = 'http://127.0.0.1:8000/get/image/info/vdsa/';
 
   constructor(private http:HttpClient) { }
 
