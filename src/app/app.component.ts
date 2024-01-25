@@ -12,6 +12,12 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class AppComponent{
 
 
+  readonly ROOT_URL = "http://localhost:8000/upload/image/"
+  constructor(private http:HttpClient){
+
+  }
+
+
   uploadedImage!: File;
   dbImage:any;
   postResponse:any;
@@ -26,7 +32,7 @@ export class AppComponent{
     const imageFormData = new FormData();
     imageFormData.append('image',this.uploadedImage, this.uploadedImage.name)
 
-    this.httpClient.post('http://localhost:8000/upload/image/',imageFormData,{observe:'response'}).subscribe((response)=>{
+    this.http.post('http://localhost:8000/upload/image/',imageFormData,{observe:'response'}).subscribe((response)=>{
       if (response.status === 200){
         this.postResponse = response;
         this.successResponse = this.postResponse.body.message;
@@ -37,7 +43,7 @@ export class AppComponent{
   }
 
   viewImage() {
-    this.httpClient.get('http://localhost:8080/get/image/info/' + this.image).subscribe(
+    this.http.get(this.ROOT_URL + this.image).subscribe(
         res => {
           this.postResponse = res;
           this.dbImage = 'data:image/jpeg;base64,' + this.postResponse.image;
@@ -51,5 +57,5 @@ export class AppComponent{
   }
 
 
-    console.log(this.setting.snippet)
+    // console.log(this.setting.snippet)
   }
