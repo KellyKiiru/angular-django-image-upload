@@ -11,9 +11,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AppComponent{
 
+  
 
   readonly ROOT_URL = "http://localhost:8000/upload/image/"
-  constructor(private http:HttpClient){
+  constructor(private http:HttpClient, setting:SettingsService){
 
   }
 
@@ -23,6 +24,8 @@ export class AppComponent{
   postResponse:any;
   successResponse!: string;
   image:any;
+  setting!:SettingsService;
+
 
   public onImageUpload(event:any){
     this.uploadedImage = event.target.files[0]
